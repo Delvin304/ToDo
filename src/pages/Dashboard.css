@@ -91,11 +91,24 @@
 }
 
 @media (max-width: 768px) {
+  .stat-header {
+    align-items: flex-start;
+  }
   .stat-card {
     padding: 20px 16px;
+  }
+  .stat-value {
+    font-size: 2.25rem;
   }
   .dashboard-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+  .mini-item {
+    padding: 12px;
+    gap: 10px;
+  }
+  .mini-item h4 {
+    word-break: break-word;
   }
 }

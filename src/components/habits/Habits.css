@@ -12,6 +12,7 @@
 
 .habit-input-form input {
   flex: 1;
+  min-width: 0;
   background: transparent;
   border: none;
   font-size: 1rem;
@@ -38,16 +39,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
 }
 
 .habit-header h3 {
   margin: 0;
   font-size: 1.1rem;
+  overflow-wrap: anywhere;
 }
 
 .habit-track-grid {
   display: flex;
   gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
 }
 
 .habit-day {
@@ -56,6 +62,7 @@
   align-items: center;
   gap: 8px;
   flex: 1;
+  min-width: 42px;
 }
 
 .habit-day-label {
@@ -91,4 +98,34 @@
   background: var(--accent-color);
   border-color: var(--accent-color);
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .habit-input-form {
+    align-items: stretch;
+    padding: 14px;
+  }
+
+  .habit-item {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .habit-cell {
+    height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .habit-input-form {
+    flex-direction: column;
+  }
+
+  .habit-input-form button {
+    width: 100%;
+  }
+
+  .habit-track-grid {
+    gap: 10px;
+  }
 }

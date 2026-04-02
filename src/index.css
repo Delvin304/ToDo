@@ -71,14 +71,18 @@ body {
   margin: 0;
   display: flex;
   min-height: 100vh;
-  min-width: 100vw;
+  min-height: 100dvh;
+  min-width: 0;
   background-color: var(--bg-color);
   color: var(--text-primary);
+  overflow-x: hidden;
 }
 
 #root {
   display: flex;
   width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 /* Common UI utilities */

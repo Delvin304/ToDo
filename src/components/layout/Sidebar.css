@@ -1,5 +1,6 @@
 .sidebar {
   width: 260px;
+  flex-shrink: 0;
   border-radius: 0;
   border-top: none;
   border-bottom: none;
@@ -84,7 +85,7 @@
     width: 100%;
     flex-direction: row;
     padding: 12px 16px;
-    padding-bottom: env(safe-area-inset-bottom, 12px);
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
     height: auto;
     border-top: 1px solid var(--border-color);
     background: rgba(20, 21, 26, 0.95);
@@ -113,16 +114,18 @@
     gap: 0;
   }
   .nav-item {
+    min-width: 0;
     flex-direction: column;
     padding: 8px;
     gap: 4px;
-    width: auto;
+    width: 100%;
     border-radius: var(--radius-sm);
     justify-content: center;
   }
   .nav-item span {
     font-size: 0.7rem;
     font-weight: 500;
+    white-space: nowrap;
   }
   .nav-item.active {
     background: transparent;
