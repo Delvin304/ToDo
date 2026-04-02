@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Very dark but premium colors for dark mode */
+  --bg-color: #0b0c10;
+  --panel-bg: #14151a;
+  --panel-bg-hover: #1c1d24;
+  --border-color: rgba(255, 255, 255, 0.08);
+  
+  --text-primary: #ededed;
+  --text-secondary: #90909c;
+  --text-muted: #5e5e6e;
+
+  /* Accent (Violet/Indigo like Linear) */
+  --accent-color: #5e6ad2;
+  --accent-hover: #6d7bf5;
+  --accent-light: rgba(94, 106, 210, 0.15);
+
+  --danger-color: #e54b4b;
+  --success-color: #2ea043;
+  --warning-color: #f2c94c;
+
+  /* Spacing & Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  
+  /* Shadows */
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 8px 15px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  color: var(--text-primary);
+  background-color: var(--bg-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme='light'] {
+  --bg-color: #f7f8fa;
+  --panel-bg: #ffffff;
+  --panel-bg-hover: #f1f3f5;
+  --border-color: rgba(0, 0, 0, 0.08);
+  
+  --text-primary: #121216;
+  --text-secondary: #5e5e6e;
+  --text-muted: #90909c;
+
+  --accent-light: rgba(94, 106, 210, 0.1);
+}
+
+.text-accent { color: var(--accent-color); }
+.text-success { color: var(--success-color); }
+.text-muted { color: var(--text-muted); }
+
+/* Base resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+}
+
+#root {
+  display: flex;
+  width: 100%;
+}
+
+/* Common UI utilities */
+.glass-panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: var(--panel-bg-hover);
+  color: var(--text-primary);
+}
+
+button {
+  background-color: var(--panel-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+button:hover {
+  background-color: var(--panel-bg-hover);
+}
+
+button.primary {
+  background-color: var(--accent-color);
+  color: #fff;
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 12px rgba(94, 106, 210, 0.3);
+}
+
+button.primary:hover {
+  background-color: var(--accent-hover);
+  box-shadow: 0 4px 15px rgba(109, 123, 245, 0.4);
+}
+
+input, textarea {
+  font-family: inherit;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--accent-color);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}

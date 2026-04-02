@@ -1,0 +1,130 @@
+.task-input-form {
+  display: flex;
+  gap: 12px;
+  background: var(--panel-bg);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+  align-items: center;
+}
+
+.task-input-form input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  padding: 0;
+}
+
+.task-input-form input:focus {
+  background: transparent;
+  border: none;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--panel-bg);
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  touch-action: none; /* specific to dnd-kit pointer sensors */
+}
+
+.task-item.is-dragging {
+  opacity: 0.5;
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-light);
+  z-index: 10;
+}
+
+.task-item:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.task-checkbox {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: transparent;
+  transition: all 0.2s ease;
+}
+
+.task-checkbox:hover {
+  border-color: var(--accent-color);
+}
+
+.task-checkbox.completed {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #fff;
+}
+
+.task-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-content h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.task-content h3.completed {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.task-grip {
+  color: var(--text-muted);
+  cursor: grab;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.task-delete {
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.task-delete:hover {
+  color: var(--danger-color);
+  background: rgba(229, 75, 75, 0.1);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-muted);
+  background: var(--panel-bg);
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--border-color);
+}
