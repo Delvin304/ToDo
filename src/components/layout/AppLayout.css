@@ -33,3 +33,43 @@
   color: var(--text-secondary);
   font-size: 1rem;
 }
+
+.hidden-desktop {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hidden-desktop {
+    display: flex;
+  }
+  .layout-container {
+    flex-direction: column;
+  }
+  .mobile-topbar {
+    width: 100%;
+    padding: 12px 16px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--panel-bg);
+    order: 1;
+    z-index: 50;
+  }
+  .logo-mobile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo-mobile h2 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  .main-content {
+    order: 2;
+    padding: 20px 16px;
+    padding-bottom: 100px; /* Safe space for bottom nav */
+  }
+  .sidebar { /* The sidebar class comes from Sidebar.css. We use order 3 */
+    order: 3;
+  }
+}

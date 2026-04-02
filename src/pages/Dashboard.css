@@ -89,3 +89,13 @@
   font-size: 0.95rem;
   font-weight: 500;
 }
+
+@media (max-width: 768px) {
+  .stat-card {
+    padding: 20px 16px;
+  }
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
